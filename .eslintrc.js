@@ -4,12 +4,16 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard'
+		'standard',
+		'prettier',
+		'prettier/react'
   ],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
-  },
+		SharedArrayBuffer: 'readonly',
+		__DEV__: 'readonly'
+	},
+	parser: 'babel-eslint', // understand new features js
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -18,8 +22,17 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'react'
+		'react',
+		'prettier'
   ],
-  rules: {
+	rules: {
+    'prettier/prettier': 'error',
+    'react/jsx-filename-extension': [
+      'warn',
+      {
+        extensions: ['.jsx', '.js']
+      }
+    ],
+    'import/prefer-dafault-export': 'off'
   }
 }
