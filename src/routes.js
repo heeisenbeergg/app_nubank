@@ -6,17 +6,18 @@ import { createStackNavigator } from '@react-navigation/stack'
 import Main from './pages/Main'
 
 const Stack = createStackNavigator()
+const { Navigator, Screen } = Stack
 
 export default function Routes() {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator
+			<Navigator
 				screenOptions={{
 					headerShown: false,
 				}}
 			>
-				<Stack.Screen name="main" component={Main} />
-			</Stack.Navigator>
+				<Screen name="main" component={Main} />
+			</Navigator>
 		</NavigationContainer>
 	)
 }
