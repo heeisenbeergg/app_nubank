@@ -1,6 +1,7 @@
+import { Animated } from 'react-native'
 import styled from 'styled-components/native'
 
-export const Container = styled.ScrollView`
+export const Container = styled(Animated.ScrollView)`
 	margin: 0 30px;
 `
 
@@ -24,6 +25,7 @@ export const NavItem = styled.View`
 `
 
 export const NavText = styled.Text`
+	flex: 2;
 	font-size: 15px;
 	color: #fff;
 	margin-left: 20px;

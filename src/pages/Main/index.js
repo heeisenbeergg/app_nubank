@@ -1,7 +1,7 @@
 import React from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { Animated } from 'react-native'
-import { PanGestureHandler, State } from 'react-native-gesture-handler'
+import { PanGestureHandler } from 'react-native-gesture-handler'
 
 import Header from '../../componets/Header'
 import Tabs from '../../componets/Tabs'
@@ -17,6 +17,7 @@ import {
 	Description,
 	CardFooter,
 	Annotation,
+	TitleCard,
 } from './styles'
 
 export default function Main() {
@@ -36,7 +37,7 @@ export default function Main() {
 			<Header />
 
 			<Content>
-				<Menu />
+				<Menu translateY={translateY} />
 
 				<PanGestureHandler
 					onGestureEvent={animatedEvent}
@@ -57,6 +58,7 @@ export default function Main() {
 					>
 						<CardHeader>
 							<Icon name="attach-money" size={28} color="#666" />
+							<TitleCard>Conta</TitleCard>
 							<Icon name="visibility-off" size={28} color="#666" />
 						</CardHeader>
 						<CardContent>
@@ -68,7 +70,7 @@ export default function Main() {
 							<Annotation>
 								Transferência de R$ 100,00 recebida do salão pente fino
 							</Annotation>
-							<Icon name="arrow-forward" size={28} color="#666" />
+							<Icon name="keyboard-arrow-right" size={28} color="#666" />
 						</CardFooter>
 					</Card>
 				</PanGestureHandler>

@@ -50,7 +50,7 @@ export const Description = styled.Text`
 `
 
 export const CardFooter = styled.View`
-	padding: 30px 5px;
+	padding: 30px 40px;
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
@@ -61,4 +61,11 @@ export const CardFooter = styled.View`
 export const Annotation = styled.Text`
 	font-size: 12px;
 	color: #333;
+	padding: 0 30px;
+`
+export const TitleCard = styled.Text`
+	flex: 2;
+	padding-left: 10px;
+	font-size: 16px;
+	color: #999;
 `
