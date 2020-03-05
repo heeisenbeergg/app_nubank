@@ -58,9 +58,33 @@ export default function Main() {
 		}
 	}
 
+	const onHandlePress = event => {
+		const opened = parseInt(JSON.stringify(translateY)) > 0
+		let offset = opened ? 380 : 0
+
+		if (opened) {
+			translateY.setValue(offset)
+			translateY.setOffset(0)
+		}
+
+		Animated.timing(translateY, {
+			toValue: opened ? 0 : 380,
+			duration: 200,
+			useNativeDriver: true,
+		}).start(() => {
+			offset = !opened ? 380 : 0
+			translateY.setOffset(offset)
+			translateY.setValue(0)
+		})
+	}
+
 	return (
 		<Container>
-			<Header />
+			<Header
+				translateY={translateY}
+				onHandlePress={event => onHandlePress(event)}
+				openedMenu
+			/>
 
 			<Content>
 				<Menu translateY={translateY} />
@@ -94,7 +118,7 @@ export default function Main() {
 						<CardFooter>
 							<Icon name="attach-money" size={28} color="#666" />
 							<Annotation>
-								Transferência de R$ 100,00 recebida do salão pente fino
+								Transferência de R$ 100,00 recebida do Michael Pato 2
 							</Annotation>
 							<Icon name="keyboard-arrow-right" size={28} color="#666" />
 						</CardFooter>
